@@ -1,10 +1,16 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class BulletFactory {
-	private static HashMap<Integer, Bullet> bullets = new HashMap<Integer, Bullet>();
+	public static enum BULLET_TYPES {
+		PLAYER_BULLET,
+		ENEMY_EASY_BULLET,
+		ENEMY_MEDIUM_BULLET,
+		ENEMY_HARD_BULLET
+	};
 	
-	public static Bullet getBullet(int type) {
+	private static HashMap<BULLET_TYPES, Bullet> bullets = new HashMap<BULLET_TYPES, Bullet>();
+	
+	public static Bullet getBullet(BulletFactory.BULLET_TYPES type) {
 		if(bullets.containsKey(type)) {
 			return bullets.get(type);
 		}
@@ -12,10 +18,10 @@ public class BulletFactory {
 		Bullet b;
 		
 		switch(type) {
-			case 0:	b = new PlayerBullet();      break;
-			case 1:	b = new EnemyEasyBullet();   break;
-			case 2:	b = new EnemyMediumBullet(); break;
-			case 3:	b = new EnemyHardBullet();   break;
+			case PLAYER_BULLET:       b = new PlayerBullet();      break;
+			case ENEMY_EASY_BULLET:   b = new EnemyEasyBullet();   break;
+			case ENEMY_MEDIUM_BULLET: b = new EnemyMediumBullet(); break;
+			case ENEMY_HARD_BULLET:	  b = new EnemyHardBullet();   break;
 			default: b = new Bullet();
 		}
 		
