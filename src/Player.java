@@ -14,6 +14,7 @@ public class Player {
 	public Point position;
 	public int speed = 500;
 	public Point size = new Point(50, 38);
+	public int cannons = 1;
 	
 	private static Player instance = null;
 	

@@ -7,6 +7,7 @@ import javax.imageio.ImageIO;
 
 public class EnemyMedium extends Enemy {
 	public EnemyMedium() {
+		this.state = new StateNormal();
 		this.size = new Point(78, 63);
 		this.maxHp = 15;
 		this.hp = this.maxHp;
@@ -23,7 +24,7 @@ public class EnemyMedium extends Enemy {
 		switch(r.nextInt(3)) {
 			case 0: this.shootType = new ShootTypeCircle(GamePanel.DIFFICULTY.MEDIUM); break;
 			case 1: this.shootType = new ShootTypeLine(GamePanel.DIFFICULTY.MEDIUM); break;
-			case 2: this.shootType = new ShootTypeWave(GamePanel.DIFFICULTY.MEDIUM); break;
+			case 2: this.shootType = new ShootTypeHoming(GamePanel.DIFFICULTY.MEDIUM); break;
 		}
 	}
 }

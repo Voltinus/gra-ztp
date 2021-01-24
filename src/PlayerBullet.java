@@ -9,7 +9,6 @@ public class PlayerBullet extends Bullet {
 		damage = 1;
 		size = new Point(9, 54);
 		speed = 500;
-		dir = 0;
 		
 		try {
 			img = ImageIO.read(new File("img/laser.png"));

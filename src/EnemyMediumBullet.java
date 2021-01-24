@@ -9,10 +9,9 @@ public class EnemyMediumBullet extends Bullet {
 		damage = 10;
 		size = new Point(13, 13);
 		speed = 400;
-		dir = Math.PI;
 		
 		try {
-			img = ImageIO.read(new File("img/laser_enemy.png"));
+			img = ImageIO.read(new File("img/laser_enemy_blue.png"));
 		} catch(IOException e) {
 			System.out.println("Nie udało się załadować obrazka dla pocisku przeciwnika (img/laser.png)");
 		}

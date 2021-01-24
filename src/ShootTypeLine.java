@@ -1,5 +1,6 @@
 import java.awt.Point;
 import java.util.HashMap;
+import java.lang.UnsupportedOperationException;
 
 public class ShootTypeLine implements ShootType {
 
@@ -13,7 +14,7 @@ public class ShootTypeLine implements ShootType {
 	int bulletCount = 5;
 	
 	@Override
-	public void getBullets(Point position, HashMap<Point, Bullet> bullets) {
+	public void getBullets(Point position, HashMap<BulletExtState, Bullet> bullets, Point player) {
 		for(int i=0; i<bulletCount; i++) {
 			Bullet b = null;
 			switch(difficulty) {
@@ -21,10 +22,9 @@ public class ShootTypeLine implements ShootType {
 				case MEDIUM: b = new EnemyMediumBullet(); break;
 				case HARD:   b = new EnemyHardBullet(); break;
 			}
-			b.dir = Math.PI;
-			Point newPosition = new Point(position.x - (bulletCount/2)*20 + i*20, position.y);
-			bullets.put(newPosition, b);
+			BulletExtState ext = new BulletExtState(new Point(position.x - (bulletCount/2)*20 + i*20, position.y), Math.PI);
+			bullets.put(ext, b);
 		}
 	}
-
+	
 }

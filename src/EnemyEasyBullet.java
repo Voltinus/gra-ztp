@@ -9,10 +9,9 @@ public class EnemyEasyBullet extends Bullet {
 		damage = 2;
 		size = new Point(13, 13);
 		speed = 300;
-		dir = Math.PI;
 		
 		try {
-			img = ImageIO.read(new File("img/laser_enemy.png"));
+			img = ImageIO.read(new File("img/laser_enemy_green.png"));
 		} catch(IOException e) {
 			System.out.println("Nie udało się załadować obrazka dla pocisku przeciwnika (img/laser.png)");
 		}
