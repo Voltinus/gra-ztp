@@ -8,7 +8,7 @@ public class EnemyHardBullet extends Bullet {
 	EnemyHardBullet() {
 		damage = 20;
 		size = new Point(13, 13);
-		speed = 500;
+		baseSpeed = 500;
 		
 		try {
 			img = ImageIO.read(new File("img/laser_enemy_red.png"));

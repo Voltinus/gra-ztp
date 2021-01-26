@@ -11,6 +11,5 @@ public abstract class Enemy {
 	public Point position;
 	
 	public ShootType shootType;
-	
 	public State state;
 }

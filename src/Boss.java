@@ -7,6 +7,7 @@ import javax.imageio.ImageIO;
 
 public class Boss extends Enemy {
 	public Boss(GamePanel.DIFFICULTY diff) {
+		this.state = new StateNormal();
 		this.size = new Point(98, 75);
 		switch(diff) {
 			case EASY:   this.maxHp = 50;  break;

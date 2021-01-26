@@ -1,4 +1,6 @@
 import java.awt.AWTException;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 
@@ -10,7 +12,7 @@ public class GameFrame extends JFrame {
 	private static GamePanel gamePanel = null;
 	private static MainMenuPanel mainMenuPanel = null;
 	
-	public static void reloadPanels(boolean running, GamePanel.DIFFICULTY diff) throws AWTException {
+	public static void reloadPanels(boolean running, GamePanel.DIFFICULTY diff) throws AWTException, InterruptedException, FileNotFoundException, ClassNotFoundException, IOException {
 		if(gamePanel != null) {
 			instance.remove(gamePanel);
 			gamePanel = null;
@@ -37,11 +39,11 @@ public class GameFrame extends JFrame {
 		instance.setLocationRelativeTo(null);
 	}
 	
-	public static void reloadPanels(boolean running) throws AWTException {
+	public static void reloadPanels(boolean running) throws AWTException, InterruptedException, FileNotFoundException, ClassNotFoundException, IOException {
 		reloadPanels(running, GamePanel.DIFFICULTY.EASY);
 	}
 	
-	GameFrame() throws AWTException {
+	GameFrame() throws AWTException, InterruptedException, FileNotFoundException, ClassNotFoundException, IOException {
 		GameFrame.instance = this;
 		reloadPanels(false);
 	}

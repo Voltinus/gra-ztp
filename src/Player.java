@@ -7,7 +7,6 @@ import javax.imageio.ImageIO;
 
 public class Player {
 	
-	public String nick; 
 	public final int maxHp = 100;
 	public int hp = maxHp;
 	public BufferedImage img;
