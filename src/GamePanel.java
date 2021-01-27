@@ -18,7 +18,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-
 @SuppressWarnings("serial")
 public class GamePanel extends JPanel implements ActionListener {
 	boolean running = true;
@@ -96,7 +95,6 @@ public class GamePanel extends JPanel implements ActionListener {
 			    		ranking.save(textbox.getText(), points);
 						GameFrame.reloadPanels(false);
 					} catch (Exception e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 			    }
@@ -124,7 +122,6 @@ public class GamePanel extends JPanel implements ActionListener {
 			    	try {
 						GameFrame.reloadPanels(false);
 					} catch (Exception e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 			    }
@@ -138,7 +135,7 @@ public class GamePanel extends JPanel implements ActionListener {
 	}
 	
 	
-	int currentState = 11;
+	int currentState = 0;
 	
 	private void spawnEnemies() throws AWTException, InterruptedException, ClassNotFoundException, IOException {
 		if(currentState % 4 == 3) { // Boss
@@ -241,7 +238,6 @@ public class GamePanel extends JPanel implements ActionListener {
 					try {
 						tick(delta);
 					} catch (Exception e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
@@ -479,12 +475,12 @@ public class GamePanel extends JPanel implements ActionListener {
 	
 	public void draw(Graphics g) {
 		try {
-			g.drawImage(bg0, 0, (0 + tickNo) % 600, null);
-			g.drawImage(bg1, 0, (0 + tickNo*3) % 600, null);
-			g.drawImage(bg2, 0, (0 + tickNo*5) % 600, null);
-			g.drawImage(bg0, 0, (0 + tickNo % 600) - 600, null);
-			g.drawImage(bg1, 0, (0 + tickNo*3 % 600) - 600, null);
-			g.drawImage(bg2, 0, (0 + tickNo*5 % 600) - 600, null);
+			g.drawImage(bg0, 0, (0 + tickNo) % Game.SCREEN_HEIGHT, null);
+			g.drawImage(bg1, 0, (0 + tickNo*3) % Game.SCREEN_HEIGHT, null);
+			g.drawImage(bg2, 0, (0 + tickNo*5) % Game.SCREEN_HEIGHT, null);
+			g.drawImage(bg0, 0, (0 + tickNo % Game.SCREEN_HEIGHT) - Game.SCREEN_HEIGHT, null);
+			g.drawImage(bg1, 0, (0 + tickNo*3 % Game.SCREEN_HEIGHT) - Game.SCREEN_HEIGHT, null);
+			g.drawImage(bg2, 0, (0 + tickNo*5 % Game.SCREEN_HEIGHT) - Game.SCREEN_HEIGHT, null);
 			
 			if(running) {
 				for(Map.Entry<BulletExtState, Bullet> bullet : bullets.entrySet()) {
@@ -509,10 +505,7 @@ public class GamePanel extends JPanel implements ActionListener {
 	}
 	
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void actionPerformed(ActionEvent arg0) {}
 	
 	
 	public static HashMap<String, Boolean> pressed = new HashMap<String, Boolean>();
@@ -535,7 +528,6 @@ public class GamePanel extends JPanel implements ActionListener {
 					timer.purge();
 					GameFrame.reloadPanels(running);
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}

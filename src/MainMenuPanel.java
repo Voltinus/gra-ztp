@@ -1,4 +1,3 @@
-import java.awt.AWTException;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -46,7 +45,6 @@ public class MainMenuPanel extends JPanel {
 		    	try {
 					GameFrame.reloadPanels(true, GamePanel.DIFFICULTY.EASY);
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 		    }
@@ -65,7 +63,6 @@ public class MainMenuPanel extends JPanel {
 		    	try {
 					GameFrame.reloadPanels(true, GamePanel.DIFFICULTY.MEDIUM);
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 		    }
@@ -84,7 +81,6 @@ public class MainMenuPanel extends JPanel {
 		    	try {
 					GameFrame.reloadPanels(true, GamePanel.DIFFICULTY.HARD);
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 		    }

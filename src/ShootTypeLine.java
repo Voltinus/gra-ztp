@@ -1,6 +1,5 @@
 import java.awt.Point;
 import java.util.HashMap;
-import java.lang.UnsupportedOperationException;
 
 public class ShootTypeLine implements ShootType {
 

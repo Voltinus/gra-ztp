@@ -1,10 +1,9 @@
-V,6420
-VVV,4740
+Voltinus,11970
+Voltinus,10910
+Voltinus,10010
 Miro,2400
 rankingArrayList,1730
-asdfasdfasdfasdfasdfasdfasdfasdfasdfasdf,1620
 rurra,1590
 Miro,1500
 Miro,1400
-Miro,1000
 Miro,1000
