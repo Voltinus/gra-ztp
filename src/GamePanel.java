@@ -61,7 +61,7 @@ public class GamePanel extends JPanel implements ActionListener {
 			score.setFont(new Font(score.getFont().getName(), Font.PLAIN, 30));
 			score.setForeground(Color.WHITE);
 			score.setLocation(100, 150);
-			score.setSize(new Dimension(200, 30));
+			score.setSize(new Dimension(300, 30));
 			score.setText("Wynik: " + points);
 			this.add(score);
 			
